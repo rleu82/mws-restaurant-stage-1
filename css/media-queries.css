@@ -2,14 +2,17 @@
 #restaurants-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px; 
+    grid-gap: 30px;
 }
 
 @media screen and (min-width: 600px) and (max-width: 1080px) {
     #restaurants-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 30px; 
+        grid-gap: 30px;
+    }
+    .filter-options {
+        text-align: center;
     }
 }
 
@@ -17,6 +20,9 @@
     #restaurants-list {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 10px; 
+        grid-gap: 10px;
+    }
+    .filter-options {
+        text-align: center;
     }
 }
