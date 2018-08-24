@@ -159,7 +159,10 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = restaurant => {
     const li = document.createElement('li');
-
+    // Generate listitem role for li element
+    const liRole = document.createAttribute('role');
+    liRole.value = 'listitem';
+    li.setAttributeNode(liRole);
     const image = document.createElement('img');
     image.className = 'restaurant-img';
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
