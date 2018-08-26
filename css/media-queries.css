@@ -4,8 +4,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px; 
 }
-
-@media screen and (min-width: 600px) and (max-width: 1080px) {
+#maincontent {
+    display: grid;
+}
+@media screen and (min-width: 715px) and (max-width: 1024px) {
     #restaurants-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -21,7 +23,7 @@
     }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 714px) {
     #restaurants-list {
         display: grid;
         grid-template-columns: 1fr;
