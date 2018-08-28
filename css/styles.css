@@ -213,7 +213,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 100%;
+  width: 50%;
   z-index: 1001;
 }
 #restaurant-name {
@@ -251,9 +251,9 @@ nav h1 a {
   width: 50%;
 }
 #reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  margin: 20px 0;
+  border-top: 1px solid #d9d9d9;
+  margin: 30px 0;
+  padding-top: 20px;
   padding-bottom: 80px;
   width: 100%;
 }
@@ -280,10 +280,11 @@ nav h1 a {
 }
 #reviews-list li p {
   margin: 0 0 10px;
+  line-height: 2;
 }
 #restaurant-hours td {
   color: #666;
 }
 #restaurant-info {
-  margin: 140px 40px 20px 40px;
+  margin: 150px 40px 0 40px;
 }
