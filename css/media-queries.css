@@ -1,4 +1,5 @@
 
+/* ====================== index.html Restaurant ====================== */
 #restaurants-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -35,7 +36,7 @@
     .filter-options select {
         margin: 0 0 20px 0;
     }
-    /* ====================== Restaurant Details ====================== */
+    /* ====================== restaurant.html Restaurant Details ====================== */
     .inside #map-container {
         height: 300px;
         position: relative;
