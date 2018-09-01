@@ -9,7 +9,9 @@
 const cacheVersion = 'version1';
 // Array of items to Cache
 const cacheItems = [
-    'sw_restaurant.js',
+    'https://unpkg.com/leaflet@1.3.4/dist/leaflet.css',
+    'https://necolas.github.io/normalize.css/8.0.0/normalize.css',
+    'https://unpkg.com/leaflet@1.3.4/dist/leaflet.js',
     'index.html',
     'restaurant.html',
     '/css/media-queries.css',
@@ -28,10 +30,7 @@ const cacheItems = [
     '/js/dbhelper.js',
     '/js/main.js',
     '/js/restaurant_info.js',
-    'config.js',
-    'https://necolas.github.io/normalize.css/8.0.0/normalize.css',
-    'https://unpkg.com/leaflet@1.3.4/dist/leaflet.css',
-    'https://unpkg.com/leaflet@1.3.3/dist/leaflet.js'
+    'config.js'
 ];
 
 /**
@@ -48,6 +47,7 @@ self.addEventListener('install', event => {
             })
             // skipWaiting for items can go into effect immediately
             .then(() => self.skipWaiting)
+            .catch(err => console.log(err))
     );
 });
 
@@ -74,11 +74,22 @@ self.addEventListener('activate', event => {
 });
 
 /**
- * Fetch event for Service Worker when offline or network difficulties
+ * Fetch event for Service Worker
  */
 self.addEventListener('fetch', event => {
-    // Check if site is working by repsonding with initial request
-    // If no request, catch the response and return the cache that matches
-    // the request.
-    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+    event.respondWith(
+        // fetch original request if online and cache a copy
+        fetch(event.request)
+            .then(Response => {
+                const reqClone = Response.clone();
+                // Now open and store the clone in cache
+                caches.open(cacheVersion).then(cache => {
+                    cache.put(event.request, reqClone);
+                });
+                // return response
+                return Response;
+            })
+            // If error, return original cache that was stored
+            .catch(err => caches.match(event.request).then(Response => Response))
+    );
 });
