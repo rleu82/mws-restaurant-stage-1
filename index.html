@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <a href="#skip-to-filters" class="skip-links" tabindex="-1"></a>
+  <a href="#skip-to-filters" class="skip-links" tabindex="1"></a>
   <header>
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
@@ -23,9 +23,9 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" aria-label="interactive map of restaurants in select neighborhoods" role="application"></div>
     </section>
-    <section id="skip-to-filters">
+    <section id="skip-to-filters" tabindex="2">
       <div class="filter-options" role="search" aria-labelledby="restaurant-filter" tabindex="0">
         <h2 id="restaurant-filter">Filter Results</h2>
         <label for="neighborhoods-select">Choose A Neighborhood:</label>
@@ -37,7 +37,7 @@
           <option value="all">All Cuisines</option>
         </select>
       </div>
-      <ul role="list" aria-label="Restaurant list" id="restaurants-list"></ul>
+      <ul role="list" aria-label="Restaurant list" id="restaurants-list" tabindex="3"></ul>
     </section>
   </main>
 
