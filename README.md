@@ -1,8 +1,4 @@
-# FEND Nanodegree: Project 5
-
----
-
-## Restaurant Review App
+# FEND Nanodegree: Restaurant Review App
 
 ## Project Overview:
 
@@ -14,7 +10,7 @@ We were to take a static **Restaurant Reviews** site and convert it into a mobil
 2. Navigate to [Mapbox](https://www.mapbox.com)
 3. If you wish to use your own key. Sign up for a free Mapbox account and generate a key.
 4. Open config.js and replace 'MY_KEY' value with your key.
-5. If you wish to keep your key private from uploading to git. Create '.gitignore' file and put 'config.js' on any line and save. I've included a key for this projects purpose.
+5. If you wish to keep your key private from uploading to git. Create '.gitignore' file and put 'config.js' on any line and save. I've included a key for this project's purpose.
 6. Download [Python](https://www.python.org/) if you do not have it installed.
 7. In a terminal, navigate to the folder of this repo.
 8. Check your Python version using `python -v` in the terminal. If you have Python 2.x, type `python -m SimpleHTTPServer 8000` or another port other than `8000` in the terminal. For Python 3.x, you can use `python3 -m http.server 8000` to start the server.
