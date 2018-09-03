@@ -156,6 +156,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = review => {
     const li = document.createElement('li');
     const name = document.createElement('p');
+    // tab index for reviews
     name.innerHTML = review.name;
     li.appendChild(name);
 
@@ -170,6 +171,11 @@ createReviewHTML = review => {
     const comments = document.createElement('p');
     comments.innerHTML = review.comments;
     li.appendChild(comments);
+
+    // Add tabindex Attribute to li for better tab structure
+    const reviewTabIndex = document.createAttribute('tabindex');
+    reviewTabIndex.value = '3';
+    li.setAttributeNode(reviewTabIndex);
 
     return li;
 };

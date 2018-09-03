@@ -183,6 +183,17 @@ createRestaurantHTML = restaurant => {
     li.append(address);
 
     const more = document.createElement('a');
+    // Add tabindex to list of Restaurants for better tab structure
+    const aTabIndex = document.createAttribute('tabindex');
+    // Add aria labels to view details button
+    const ariaDetails = document.createAttribute('aria-label');
+    // tabindex value
+    aTabIndex.value = '3';
+    // aria label value
+    ariaDetails.value = 'View ' + restaurant.name + ' restaurant details';
+    // set tabindex and aria values to button
+    more.setAttributeNode(aTabIndex);
+    more.setAttributeNode(ariaDetails);
     more.innerHTML = 'View Details';
     more.href = DBHelper.urlForRestaurant(restaurant);
     li.append(more);
