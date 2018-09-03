@@ -47,6 +47,7 @@ self.addEventListener('install', event => {
             })
             // skipWaiting for items can go into effect immediately
             .then(() => self.skipWaiting)
+            // on errory console log error
             .catch(err => console.log(err))
     );
 });
@@ -64,7 +65,7 @@ self.addEventListener('activate', event => {
                 cacheVersions.map(cache => {
                     // If cache does not equal to cacheVersion variable
                     if (cache !== cacheVersion) {
-                        // Delete the cache
+                        // Delete the cache if it doesn't match cacheVersion
                         return caches.delete(cache);
                     }
                 })
