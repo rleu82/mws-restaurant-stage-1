@@ -188,7 +188,7 @@ createRestaurantHTML = restaurant => {
     // Add aria labels to view details button
     const ariaDetails = document.createAttribute('aria-label');
     // tabindex value
-    aTabIndex.value = '3';
+    aTabIndex.value = '0';
     // aria label value
     ariaDetails.value = 'View ' + restaurant.name + ' restaurant details';
     // set tabindex and aria values to button

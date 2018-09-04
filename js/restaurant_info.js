@@ -133,7 +133,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     const container = document.getElementById('reviews-container');
-    const title = document.createElement('h2');
+    const title = document.createElement('h3');
     title.innerHTML = 'Reviews';
     container.appendChild(title);
 
@@ -174,7 +174,7 @@ createReviewHTML = review => {
 
     // Add tabindex Attribute to li for better tab structure
     const reviewTabIndex = document.createAttribute('tabindex');
-    reviewTabIndex.value = '3';
+    reviewTabIndex.value = '0';
     li.setAttributeNode(reviewTabIndex);
 
     return li;

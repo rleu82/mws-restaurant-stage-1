@@ -91,6 +91,6 @@ self.addEventListener('fetch', event => {
                 return Response;
             })
             // If error, return original cache that was stored
-            .catch(err => caches.match(event.request).then(Response => Response))
+            .catch(err => caches.match(event.request, { ignoreSearch: true }).then(Response => Response))
     );
 });
